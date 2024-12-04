@@ -1,38 +1,139 @@
-.App {
+
+.side-img {
+  height: 32vw;
+  width: 32vw;
+  border-radius: 50%;
+}
+
+/** Menu **/
+.menu a {
+  text-decoration: none;
+}
+
+/*** Footer ***/
+
+.ff-secondary {
+  font-family: 'Pacifico', cursive;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+  font-weight: 700 !important;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+  background-color: gray;
+}
+
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+  color: var(--light);
+}
+
+.footer .footer-menu a {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+
+/** Login and SignUp**/
+
+.login-card {
+  margin-top: 20vh;
+  width: 56vw;
+  height: 56vh;
+}
+
+.login-image {
+  max-height: 56vh;
+}
+
+.login-heading {
+  font-family: 'Pacifico', cursive;
+}
+
+.login-button {
+  width: 100%;
+}
+
+.login-text {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.signup-card {
+  margin-top: 20vh;
+  width: 56vw;
+  height: 64vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.signup-image {
+  max-height: 64vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.signup-heading {
+  font-family: 'Pacifico', cursive;
 }
 
-.App-link {
-  color: #61dafb;
+.signup-button {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signup-text {
+  text-align: center;
 }
