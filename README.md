@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# 🌶️ Spicy Bazaar 🍛 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Spicy Bazaar** is a web application for Indian food catering reservation and order system built with React and Firebase, allowing users to explore and reserve food for events. The app features user authentication, real-time food item listings, food cart functionality, and order management.
 
-## Available Scripts
 
-In the project directory, you can run:
+## 🍽️ Features
+
+- **User Authentication:**  
+  Users can sign up, log in, and log out using Firebase Authentication (Email & Password).
+  
+- **Product Listings:**  
+  Display a breakfast-lunch-dinner menu, including details like name, price, quantity and description, fetched dynamically from Firebase Firestore.
+
+- **Cart Functionality:**  
+  Users can select items from menu and update food cart.
+
+- **Responsive Design:**  
+  The app is designed to be fully responsive, ensuring a smooth experience on both desktop and mobile devices.
+
+- **Order Management:**  
+  Users can place orders and view their food order history.
+
+
+## ⚛️ Tech Stack
+
+- **Frontend:**  
+  React, React Router, CSS, Bootstrap
+
+- **Backend:**  
+  Firebase Firestore (Database), Firebase Authentication
+
+- **Hosting:**  
+  Firebase Hosting
+
+
+## 📋 Installation
+
+**Step 1:** Clone the repository
+
+### `git clone https://github.com/Hemagowdham/spicy-bazzar-catering.git`
+
+### `cd spicy-bazzar-catering`
+
+**Step 2:** Install dependencies using npm install
+
+**Step 3:** Runs the app in development mode.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🎬 Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+youtube link... (yet to paste)
 
-### `npm test`
+## 📸 Project Screenshots
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/user-attachments/assets/788af605-d49b-4bb6-8ebd-e54c5ac3ca1f)
 
-### `npm run build`
+![image](https://github.com/user-attachments/assets/45475cab-5372-4db3-a2b1-bdd63592372e)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
