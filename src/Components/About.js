@@ -10,7 +10,7 @@ export default function About() {
                                 <img className="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="images/about2.jpg" />
                             </div>
                             <div className="col-6 text-start">
-                                <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="images/about1.jpg" style={{"margin-top": "25%"}} />
+                                <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="images/about1.jpg" style={{"marginTop": "25%"}} />
                             </div>
                             <div className="col-6 text-end">
                                 <img className="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.5s" src="images/about4.jpg" />

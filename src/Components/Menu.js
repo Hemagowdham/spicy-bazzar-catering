@@ -49,16 +49,6 @@ export default function Menu() {
                                 <FoodItem />
                                 <FoodItem />
                                 <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
                             </div>
                         </div>
                         <div id="tab-2" className="tab-pane fade show p-0">
@@ -70,31 +60,11 @@ export default function Menu() {
                                 <FoodItem />
                                 <FoodItem />
                                 <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
                             </div>
                         </div>
                         <div id="tab-3" className="tab-pane fade show p-0">
                             <div className="row g-4">
                                 <h1>Dinner</h1>
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
                                 <FoodItem />
                                 <FoodItem />
                                 <FoodItem />
