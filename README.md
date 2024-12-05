@@ -24,7 +24,7 @@
 ## ⚛️ Tech Stack
 
 - **Frontend:**  
-  React, React Router, CSS, Bootstrap
+  React, React Router, React Toastify, CSS, Bootstrap
 
 - **Backend:**  
   Firebase Firestore (Database), Firebase Authentication
@@ -53,8 +53,18 @@ youtube link... (yet to paste)
 
 ## 📸 Project Screenshots
 
-![image](https://github.com/user-attachments/assets/788af605-d49b-4bb6-8ebd-e54c5ac3ca1f)
+![image](https://github.com/user-attachments/assets/9adfabf1-5537-4681-87b8-8a09f9aeb06a)
 
-![image](https://github.com/user-attachments/assets/45475cab-5372-4db3-a2b1-bdd63592372e)
+![image](https://github.com/user-attachments/assets/abf1df8e-37d7-4797-a627-ae483610545d)
+
+![image](https://github.com/user-attachments/assets/9188ef11-a972-439d-a061-179f19482f90)
+
+![image](https://github.com/user-attachments/assets/93926be1-157d-4e59-90a5-d82061b499e6)
+
+![image](https://github.com/user-attachments/assets/953aa4f4-9713-45ff-9b59-d44325e2a1bc)
+
+
+
+
 
 
