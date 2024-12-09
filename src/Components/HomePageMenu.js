@@ -13,12 +13,78 @@ export default function Menu() {
                     <div className="tab-content">
                         <div>
                             <div className="row g-4">
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/puttu.jpeg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Puttu</span>
+                                                <span className="text-primary">₹200</span>
+                                            </h5>
+                                            <small className="fst-italic">Traditional South Indian dish made from steamed rice flour and grated coconut, served with curry or sugar.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/puri.jpg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Chole Poori</span>
+                                                <span className="text-primary">₹200</span>
+                                            </h5>
+                                            <small className="fst-italic">Traditional Indian deep-fried bread, served with curry or chutney.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/chickenbiryani.jpeg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Chicken Biryani</span>
+                                                <span className="text-primary">₹250</span>
+                                            </h5>
+                                            <small className="fst-italic">Aromatic Indian chicken biryani: tender chicken, spices, and fragrant basmati rice cooked to perfection.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/north thali.jpg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>North Indian Thali</span>
+                                                <span className="text-primary">₹200</span>
+                                            </h5>
+                                            <small className="fst-italic">Vibrant platter featuring a variety of traditional dishes, including rice, dal, vegetables, roti, and curd, offering a balanced meal.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/karidosa.jpg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Kari dosa</span>
+                                                <span className="text-primary">₹200</span>
+                                            </h5>
+                                            <small className="fst-italic">A crispy dosa stuffed with spiced mutton curry for a delicious fusion of textures and tastes.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="d-flex align-items-center">
+                                        <img className="flex-shrink-0 img-fluid rounded" src="images/rotipaneer.jpeg" alt="" style={{"width": "200px", "height": "200px"}} />
+                                        <div className="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Roti with Paneer tikka</span>
+                                                <span className="text-primary">₹200</span>
+                                            </h5>
+                                            <small className="fst-italic">Soft roti paired with creamy paneer gravy for a deliciously satisfying  dinner.</small>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ export default function HomePageHeader() {
         <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
                 <a href="" className="navbar-brand p-0">
-                    <h1 className="text-primary m-0 logo-text"><i className="fa fa-utensils me-3"></i>Spicy Bazzar</h1>
+                    <img src='/images/logo-black-bg1.png' alt='logo' height="64px" width="240px"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span className="fa fa-bars"></span>

@@ -9,6 +9,7 @@ import Reserve from './Pages/Reserve';
 import Contact from './Pages/Contact';
 
 function App() {
+
   return (
     <div className="App">
         <Router>

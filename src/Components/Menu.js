@@ -1,6 +1,45 @@
 import FoodItem from "./FoodItem";
+import { auth, db } from "../Config/firebase";
+import { collection, getDocs,  query, where } from "firebase/firestore";
+import React, { useState, useEffect } from 'react';
 
 export default function Menu() {
+
+    const [dayMeal, setDayMeal] = useState([]);
+
+    const fetchFoodData = async () => {
+        try {
+            const collectionRef = collection(db, "FoodMenu");
+    
+            // Parallel queries for categories
+            const [breakfastSnapshot, lunchSnapshot, dinnerSnapshot] = await Promise.all([
+                getDocs(query(collectionRef, where("catgory", '==', "Breakfast"))),
+                getDocs(query(collectionRef, where("catgory", '==', "Lunch"))),
+                getDocs(query(collectionRef, where("catgory", '==', "Dinner")))
+            ]);
+    
+            // Process results
+            const breakfast = breakfastSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            const lunch = lunchSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            const dinner = dinnerSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    
+            console.log("Breakfast Items:", breakfast);
+            console.log("Lunch Items:", lunch);
+            console.log("Dinner Items:", dinner);
+    
+            // Set to state (combine data or separate based on requirement)
+
+        } catch (error) {
+            console.error("Error fetching food data:", error);
+        }
+    };
+    
+
+    useEffect(() => {
+        fetchFoodData();
+      }, []);    
+
+
     return(
         <>
         <div className="container-xxl py-5" id="menuSection">
@@ -43,7 +82,7 @@ export default function Menu() {
                         <div id="tab-1" className="tab-pane fade show p-0 active">
                             <div className="row g-4">
                                 <h1>Breakfast</h1>
-                                <FoodItem />
+                    
                                 <FoodItem />
                                 <FoodItem />
                                 <FoodItem />

@@ -1,5 +1,5 @@
 import { auth } from "../Config/firebase";
-import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import {Link} from 'react-router-dom';
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
@@ -43,14 +43,6 @@ export default function Login() {
         }
         
     };
-
-    const handleLogout = async () => {
-        try {
-            await signOut(auth);
-        } catch(error) {
-            console.log(error);
-        }
-    }
 
     return(
         <div className="container login" id="login">

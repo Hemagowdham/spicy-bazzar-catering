@@ -26,9 +26,9 @@ export default function Contact() {
                                 <input type="name" className="form-control" placeholder="Reserve bulk order for event" />
                                 <label htmlFor="floatingInput">Subject</label>
                             </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" placeholder="Enter your here" id="floatingTextarea" rows="5"></textarea>
-                                <label for="floatingTextarea">Message</label>
+                            <div className="form-floating mb-3">
+                                <textarea className="form-control" placeholder="Enter your here" id="floatingTextarea" rows="5"></textarea>
+                                <label htmlFor="floatingTextarea">Message</label>
                             </div>
                             <button className="btn btn-primary py-2 px-4 signup-button" type="submit">Submit</button>
                         </form>
