@@ -148,3 +148,17 @@
 .signup-text {
   text-align: center;
 }
+
+/** Reserve **/
+
+.reserve {
+  font-family: 'Pacifico', cursive;
+  color: black;
+  text-align: center;
+}
+
+.order{
+  font-family: 'Pacifico', cursive;
+  color: #0D6EFD;
+  text-align: center;
+}

@@ -5,7 +5,9 @@ import React, { useState, useEffect } from 'react';
 
 export default function Menu() {
 
-    const [dayMeal, setDayMeal] = useState([]);
+    const [breakfastArray, setBreakfastArray] = useState([]);
+    const [lunchArray, setLunchArray] = useState([]);
+    const [dinnerArray, setDinnerArray] = useState([]);
 
     const fetchFoodData = async () => {
         try {
@@ -18,27 +20,40 @@ export default function Menu() {
                 getDocs(query(collectionRef, where("catgory", '==', "Dinner")))
             ]);
     
+            console.log("MUST: ", breakfastSnapshot);
             // Process results
             const breakfast = breakfastSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             const lunch = lunchSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             const dinner = dinnerSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     
-            console.log("Breakfast Items:", breakfast);
-            console.log("Lunch Items:", lunch);
-            console.log("Dinner Items:", dinner);
+            //console.log("Breakfast Items:", breakfast);
+            //console.log("Lunch Items:", lunch);
+            //console.log("Dinner Items:", dinner);
     
-            // Set to state (combine data or separate based on requirement)
+            setBreakfastArray(breakfast);
+            setLunchArray(lunch);
+            setDinnerArray(dinner);
 
+            //console.log(breakfastArray,"\n",lunchArray,"\n",dinnerArray);
+            
         } catch (error) {
             console.error("Error fetching food data:", error);
         }
     };
-    
 
     useEffect(() => {
         fetchFoodData();
       }, []);    
 
+    const handleClick = (name) => {
+       const itemIndex = dinnerArray.findIndex((doc)=> doc.name === name)
+       if(dinnerArray[itemIndex].isAdded) {
+        dinnerArray[itemIndex].isAdded = false;
+       } else {
+        dinnerArray[itemIndex].isAdded = true;
+       }
+       console.log(breakfastArray);
+    }
 
     return(
         <>
@@ -82,34 +97,61 @@ export default function Menu() {
                         <div id="tab-1" className="tab-pane fade show p-0 active">
                             <div className="row g-4">
                                 <h1>Breakfast</h1>
-                    
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
+                                {breakfastArray.map((doc, index) => (
+                                    <div key={index} className="col-lg-6">
+                                        <div className="d-flex align-items-center">
+                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
+                                            <div className="w-100 d-flex flex-column text-start ps-4">
+                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{doc.name}</span>
+                                                <span className="text-primary">{doc.price}</span>
+                                                </h5>
+                                                <small className="fst-italic">{doc.description}</small>
+                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}}>ADD +</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <div id="tab-2" className="tab-pane fade show p-0">
                             <div className="row g-4">
                                 <h1>Lunch</h1>
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
+                                {lunchArray.map((doc, index) => (
+                                    <div key={index} className="col-lg-6">
+                                        <div className="d-flex align-items-center">
+                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
+                                            <div className="w-100 d-flex flex-column text-start ps-4">
+                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{doc.name}</span>
+                                                <span className="text-primary">{doc.price}</span>
+                                                </h5>
+                                                <small className="fst-italic">{doc.description}</small>
+                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}}>ADD +</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <div id="tab-3" className="tab-pane fade show p-0">
                             <div className="row g-4">
                                 <h1>Dinner</h1>
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
-                                <FoodItem />
+                                {dinnerArray.map((doc, index) => (
+                                    <div key={index} className="col-lg-6">
+                                        <div className="d-flex align-items-center">
+                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
+                                            <div className="w-100 d-flex flex-column text-start ps-4">
+                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{doc.name}</span>
+                                                <span className="text-primary">{doc.price}</span>
+                                                </h5>
+                                                <small className="fst-italic">{doc.description}</small>
+                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}} onClick={handleClick(doc.name)}>{doc.isAdded? "ADDED": "ADD +"}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
