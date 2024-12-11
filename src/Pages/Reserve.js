@@ -10,7 +10,7 @@ export default function Reserve() {
 
     const handleReserve = (event) => {
         event.preventDefault();
-        toast.info("🧑‍🍳 Reserved successfully", {
+        toast.info("🧑‍🍳 Reservation details Sent Successfully!", {
             position: "top-center",
             autoClose: 10000,
             hideProgressBar: false,
