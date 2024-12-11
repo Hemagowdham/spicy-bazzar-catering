@@ -1,4 +1,4 @@
-export default function HomePageContact() {
+export default function HomeContact() {
     return(
         <>
             <div className="container signup" id="contactsection">

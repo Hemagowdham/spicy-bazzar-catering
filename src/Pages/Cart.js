@@ -1,11 +1,37 @@
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
 import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { auth, db } from "../Config/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
+import CartItem from '../Components/CartItem';
 
 export default function Cart() {
+
+    const [cartDetails, setCartDetails] = useState([]);
+
+    const fetchCartDetails = async() => {
+        auth.onAuthStateChanged(async (user) => {
+            const docRef = doc(db, "Cart", user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) { 
+                console.log(docSnap.data());
+                setCartDetails([...cartDetails,...docSnap.data().cartDetails]);
+                console.log("cartdetails fetch success",cartDetails);
+
+            }
+        });
+    };
+
+    useEffect(() => {
+        fetchCartDetails();
+    }, []);
+
     return(
         <>
         <Header />
+        {cartDetails.length>0 ?
         <div className="container">
             <h4 className="my-4 order">Food cart</h4>
             <h1 className="mb-4 reserve">Food Cart Details</h1>
@@ -13,30 +39,26 @@ export default function Cart() {
                 <div className="card-body">
                     <h5 className="card-title">Order Summary</h5>
                     <br />
-                    <h6 className="card-subtitle mb-2 text-body-secondary">Order: ₹200</h6>
-                    <h6 className="card-subtitle mb-2 text-body-secondary">Delivery: ₹200</h6>
+                    <h6 className="card-subtitle mb-2 text-body-secondary">Order: ₹{cartDetails.reduce((acc, item) => (acc + parseInt(item.price.slice(1)) ), 0)}</h6>
+                    <h6 className="card-subtitle mb-2 text-body-secondary">Packaging: ₹20</h6>
                     <br/>
-                    <h5 className="card-title">Total: ₹1000</h5>
-                    <Link to="/reserve" className="btn btn-primary">Reserve now</Link>
+                    <h5 className="card-title">Total: ₹{cartDetails.reduce((acc, item) => (acc + parseInt(item.price.slice(1)) ), 20)}</h5>
+                    <Link to="/dashboard/reserveandorder" className="btn btn-primary">Reserve now</Link>
                 </div>
                 <div className="card-footer text-body-secondary">Updated now</div>
             </div>
             <br />
             <br />
             
-            <div className="col-lg-6 ms-5">
-            <div className="d-flex align-items-center">
-                <img className="flex-shrink-0 img-fluid rounded" src="images/puttu.jpeg" alt="" style={{"width": "200px", "height": "140px"}} />
-                <div className="w-100 d-flex flex-column text-start ps-4">
-                    <h5 className="d-flex justify-content-between border-bottom pb-2">
-                        <span>Puttu</span>
-                        <span className="text-primary">₹200</span>
-                    </h5>
-                    <small className="fst-italic">Traditional South Indian dish made from steamed rice flour and grated coconut, served with curry or sugar.</small>
-                </div>
-            </div>
-            </div>
+            {cartDetails.map((item, index) =>
+                <CartItem key={index} item={item}/>
+            )}
+        </div>:
+        <div className='container'>
+            <h4 className="my-4 order">Food cart</h4>
+            <h1 className="mb-4 reserve">😿 Oops! Your Food Cart is Empty</h1>
         </div>
+        }
         <Footer />
         </>
     );

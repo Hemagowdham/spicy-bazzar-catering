@@ -25,6 +25,12 @@ export default function Signup() {
                     username : user.displayName,
                     email: user.email,
                 })
+
+                await setDoc(doc(db, "Cart", user.uid), {
+                    username : user.displayName,
+                    email: user.email,
+                    cartDetails: [],
+                })
             }
             console.log("User Registered Successfully!");
             toast.info("🧑‍🍳 Registered successfully, Your spicy adventure begins now!", {

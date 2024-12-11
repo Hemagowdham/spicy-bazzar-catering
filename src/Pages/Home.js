@@ -1,18 +1,18 @@
 import About from "../Components/About";
 import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
-import HomePageContact from "../Components/HomePageContact";
-import HomePageHeader from "../Components/HomePageHeader";
-import HomePageMenu from "../Components/HomePageMenu";
+import HomeContact from "../Components/HomeContact";
+import HomeHeader from "../Components/HomeHeader";
+import HomeMenu from "../Components/HomeMenu";
 
 export default function Home() {
     return(
         <>
-        <HomePageHeader />
+        <HomeHeader />
         <Hero />
         <About />
-        <HomePageMenu />
-        <HomePageContact />
+        <HomeMenu />
+        <HomeContact />
         <Footer />
         </>
     );

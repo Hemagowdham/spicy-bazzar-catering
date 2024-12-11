@@ -4,7 +4,7 @@ import Header from "../Components/Header";
 export default function Contact() {
     return(
         <>
-            <Header />
+        <Header />
             <div className="container signup" id="signup">
                 <div className="row signup-card justify-content-center my-5">
                     <div className="col col-12 col-md-4">
@@ -35,7 +35,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-            <Footer />
+        <Footer />
         </>
     );
 }

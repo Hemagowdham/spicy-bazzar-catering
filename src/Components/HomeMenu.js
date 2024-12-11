@@ -1,6 +1,6 @@
-import FoodItem from "./FoodItem";
+import {Link} from 'react-router-dom';
 
-export default function Menu() {
+export default function HomeMenu() {
     return(
         <>
         <div className="container-xxl py-5" id="menuSection">
@@ -93,7 +93,7 @@ export default function Menu() {
             <br />
             <br />
             <h1 className="my-5 justify-content-center logo-text">Discover more delicious dishes on Spicy Bazzar.</h1>
-            <a href="" className="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">SignUp</a>
+            <Link to="/signup" className="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">SignUp</Link>
         </div>
         </>
     );

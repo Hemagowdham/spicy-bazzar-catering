@@ -1,14 +1,34 @@
+import { useState } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Reserve() {
+
+    const [headCount, setHeadCount] = useState("");
+
+    const handleReserve = (event) => {
+        event.preventDefault();
+        toast.info("🧑‍🍳 Reserved successfully", {
+            position: "top-center",
+            autoClose: 10000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+    };
+
     return(
         <>
         <Header />
         <div className="container mt-5">
         <h4 className="my-4 order">Reseve now</h4>
         <h1 className="mb-4 reserve">Start Your Catering Reservation</h1>
-        <form className="px-5 py-2">
+        <form className="px-5 py-2" onSubmit={handleReserve}>
             <div className="row mb-3">
                 <div className="col-md-6">
                     <label for="firstName" className="form-label">First Name</label>
@@ -49,7 +69,7 @@ export default function Reserve() {
             </div>
             <div className="mb-3">
                 <label for="partySize" className="form-label">How many guests will be attending the event?</label>
-                <input type="number" className="form-control" id="partySize" placeholder="Enter number" required/>
+                <input type="number" className="form-control" id="partySize" placeholder="Enter number" value={headCount} onChange={(event)=>setHeadCount(event.target.value)} required/>
             </div>
             <div className="mb-3">
                 <label for="notes" className="form-label">Notes</label>
@@ -58,8 +78,9 @@ export default function Reserve() {
             <div className="text-center">
                 <button type="submit" className="btn btn-primary" style={{"width": "40%"}}>Send</button>
             </div>
+            <ToastContainer />
         </form>
-    </div>
+        </div>
         <Footer />
         </>
     );

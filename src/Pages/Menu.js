@@ -1,13 +1,17 @@
-import FoodItem from "./FoodItem";
-import { auth, db } from "../Config/firebase";
+import FoodItem from "../Components/FoodItem";
+import { db } from "../Config/firebase";
 import { collection, getDocs,  query, where } from "firebase/firestore";
 import React, { useState, useEffect } from 'react';
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function Menu() {
 
     const [breakfastArray, setBreakfastArray] = useState([]);
     const [lunchArray, setLunchArray] = useState([]);
     const [dinnerArray, setDinnerArray] = useState([]);
+
+    const [cartItems, setCartItems] = useState([]);
 
     const fetchFoodData = async () => {
         try {
@@ -45,23 +49,14 @@ export default function Menu() {
         fetchFoodData();
       }, []);    
 
-    const handleClick = (name) => {
-       const itemIndex = dinnerArray.findIndex((doc)=> doc.name === name)
-       if(dinnerArray[itemIndex].isAdded) {
-        dinnerArray[itemIndex].isAdded = false;
-       } else {
-        dinnerArray[itemIndex].isAdded = true;
-       }
-       console.log(breakfastArray);
-    }
-
     return(
         <>
+        <Header />
         <div className="container-xxl py-5" id="menuSection">
             <div className="container menu">
                 <div className="text-center">
                     <h5 className="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                    <h1 className="mb-5">Most Popular Items</h1>
+                    
                 </div>
                 <div className="tab-className text-center wow fadeInUp" data-wow-delay="0.1s">
                     <ul className="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
@@ -98,19 +93,7 @@ export default function Menu() {
                             <div className="row g-4">
                                 <h1>Breakfast</h1>
                                 {breakfastArray.map((doc, index) => (
-                                    <div key={index} className="col-lg-6">
-                                        <div className="d-flex align-items-center">
-                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
-                                            <div className="w-100 d-flex flex-column text-start ps-4">
-                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{doc.name}</span>
-                                                <span className="text-primary">{doc.price}</span>
-                                                </h5>
-                                                <small className="fst-italic">{doc.description}</small>
-                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}}>ADD +</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <FoodItem key={index} food={doc} cartItems={cartItems} setCartItems={setCartItems}/>
                                 ))}
                             </div>
                         </div>
@@ -118,19 +101,7 @@ export default function Menu() {
                             <div className="row g-4">
                                 <h1>Lunch</h1>
                                 {lunchArray.map((doc, index) => (
-                                    <div key={index} className="col-lg-6">
-                                        <div className="d-flex align-items-center">
-                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
-                                            <div className="w-100 d-flex flex-column text-start ps-4">
-                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{doc.name}</span>
-                                                <span className="text-primary">{doc.price}</span>
-                                                </h5>
-                                                <small className="fst-italic">{doc.description}</small>
-                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}}>ADD +</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <FoodItem key={index} food={doc} cartItems={cartItems} setCartItems={setCartItems}/>
                                 ))}
                             </div>
                         </div>
@@ -138,19 +109,7 @@ export default function Menu() {
                             <div className="row g-4">
                                 <h1>Dinner</h1>
                                 {dinnerArray.map((doc, index) => (
-                                    <div key={index} className="col-lg-6">
-                                        <div className="d-flex align-items-center">
-                                            <img className="flex-shrink-0 img-fluid rounded" src={doc.image} alt="" style={{"width": "200px", "height": "140px"}} />
-                                            <div className="w-100 d-flex flex-column text-start ps-4">
-                                                <h5 className="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{doc.name}</span>
-                                                <span className="text-primary">{doc.price}</span>
-                                                </h5>
-                                                <small className="fst-italic">{doc.description}</small>
-                                                <button className="btn btn-primary py-1 px-2 me-2 mt-2" style={{"width": "80px"}} onClick={handleClick(doc.name)}>{doc.isAdded? "ADDED": "ADD +"}</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <FoodItem key={index} food={doc} cartItems={cartItems} setCartItems={setCartItems}/>
                                 ))}
                             </div>
                         </div>
@@ -158,6 +117,7 @@ export default function Menu() {
                 </div>
             </div>
         </div>
+        <Footer />
         </>
     );
 }
